@@ -1,0 +1,11 @@
+Where did you wait?
+Almost never. While I was waiting for the session 1 to answer, I wasa prompting the session 2 and so on.
+
+What did you check yourself that the agent could have checked?
+If the issues or the PRs was created successfully, or when I remove the worktree, making the gh worktree list is something that the agent could do.
+
+Did the fresh reviewer find anything the writer missed?
+Maybe if I specify in the first prompt an internal review, the reviewer wouldn't find anything.
+
+When did you lose track of which session was doing what?
+At any moment, I was so conscious of which session was doing what
