@@ -20,3 +20,6 @@ htmlcov/
 .idea/
 .vscode/
 .DS_Store
+
+# Personal notes
+corrections.md
