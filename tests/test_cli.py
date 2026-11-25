@@ -14,6 +14,34 @@ class AddCommandTest(ShelfTestCase):
         self.assertTrue(self.shelf_path.exists())
         self.assertFalse((self.home / ".shelf.json").exists())
 
+    def assertAddIsRejected(self, result, error_line):
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(result.stdout, "")
+        self.assertIn("usage: shelf add", result.stderr)
+        self.assertTrue(
+            result.stderr.endswith(error_line + "\n"),
+            f"stderr does not end with {error_line!r}:\n{result.stderr}",
+        )
+        self.assertFalse(self.shelf_path.exists())
+
+    def test_an_empty_title_is_a_usage_error(self):
+        result = self.shelf("add", "", "Frank Herbert")
+
+        self.assertAddIsRejected(result, "shelf add: error: title must not be empty")
+
+    def test_a_title_of_only_spaces_is_a_usage_error(self):
+        result = self.shelf("add", "   ", "Frank Herbert")
+
+        self.assertAddIsRejected(result, "shelf add: error: title must not be empty")
+
+    def test_an_unknown_status_is_a_usage_error_naming_the_valid_ones(self):
+        result = self.shelf("add", "Dune", "Frank Herbert", "--status", "finished")
+
+        self.assertAddIsRejected(
+            result,
+            "shelf add: error: unknown status 'finished' (use to-read, reading or done)",
+        )
+
 
 class ListCommandTest(ShelfTestCase):
     def test_an_empty_shelf_explains_how_to_add_a_book(self):
