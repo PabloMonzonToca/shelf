@@ -70,6 +70,8 @@ python -m unittest
 
 The output ends with `OK`. Add `-v` to see every test name.
 
+For a quicker, quieter run use `./test`. It passes its arguments to `unittest`, so `./test -k status` runs only the tests whose name contains `status`.
+
 The command-line tests run the real program (`python -m shelf`) in a subprocess. Each test points `SHELF_PATH` and `HOME` at its own temporary folder, so the tests never read or write your real `~/.shelf.json`.
 
 ## How the code is organized
