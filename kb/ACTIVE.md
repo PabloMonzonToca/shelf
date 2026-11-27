@@ -4,7 +4,7 @@ State as of 2026-11-27, checked with `gh issue list` and `gh pr list`.
 
 ## Current objective
 
-Get shelf ready for book clubs ([S7, #12](https://github.com/PabloMonzonToca/shelf/issues/12)), starting with tags. C1 goes before C2 ([decision 0001](decisions/0001-c1-before-c2.md)).
+Get shelf ready for book clubs ([S7, #12](https://github.com/PabloMonzonToca/shelf/issues/12)), starting with tags. C1 goes before C2 ([D-0001](decisions/D-0001-storage-change-order.md)).
 
 ## Next step
 
@@ -15,7 +15,7 @@ Start C1: branch from `main`, implement tags in [#10](https://github.com/PabloMo
 | Track | Issue | PR | State | Next gate |
 | --- | --- | --- | --- | --- |
 | C1: book tags | [#10](https://github.com/PabloMonzonToca/shelf/issues/10) | none yet | Not started | PR open, tests and Stop hook pass |
-| C2: file format version 2, with `tags` | [#11](https://github.com/PabloMonzonToca/shelf/issues/11) | none yet | Waiting for C1 | C1 merged, #11 updated to include `tags` |
+| C2: file format version 2, with `tags` | [#11](https://github.com/PabloMonzonToca/shelf/issues/11) | none yet | Waiting for C1 ([D-0001](decisions/D-0001-storage-change-order.md)) | C1 merged, #11 updated to include `tags` |
 | Alignment: PRs, merges and issues agree | none | none | Ongoing | Review before each track's PR merges |
 | Agent contract and this kb | none | [#20](https://github.com/PabloMonzonToca/shelf/pull/20) | Open, ready for review | Review and merge |
 
